@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { getProduct, products } from "@/lib/products";
+import { getProduct, products, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -48,7 +48,7 @@ function Stars({ n }: { n: number }) {
 }
 
 function ProductDetail() {
-  const { product: p } = Route.useLoaderData();
+  const { product: p } = Route.useLoaderData() as { product: Product };
   const others = products.filter((x) => x.slug !== p.slug);
   const avg = (p.reviews.reduce((s, r) => s + r.rating, 0) / p.reviews.length).toFixed(1);
 
