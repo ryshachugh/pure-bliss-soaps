@@ -128,8 +128,11 @@ function AdminProducts() {
               <Field label="Price (USD)">
                 <input type="number" value={editing.price} onChange={(e) => setEditing({ ...editing, price: Number(e.target.value) })} className="input" />
               </Field>
-              <Field label="Image URL" full>
-                <input value={editing.image} onChange={(e) => setEditing({ ...editing, image: e.target.value })} placeholder="https://..." className="input" />
+              <Field label="Product Image" full>
+                <ImageDropzone
+                  value={editing.image}
+                  onChange={(v) => setEditing({ ...editing, image: v })}
+                />
               </Field>
               <Field label="Description" full>
                 <textarea
