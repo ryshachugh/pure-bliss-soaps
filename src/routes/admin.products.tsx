@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { products as seed, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/admin/products")({
