@@ -164,3 +164,98 @@ function Field({ label, children, full }: { label: string; children: React.React
     </label>
   );
 }
+
+function ImageDropzone({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [dragging, setDragging] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleFile = (file: File) => {
+    setError(null);
+    if (!file.type.startsWith("image/")) {
+      setError("Please upload an image file.");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setError("Image must be under 5MB.");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => onChange(String(reader.result));
+    reader.readAsDataURL(file);
+  };
+
+  const onDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) handleFile(file);
+  };
+
+  if (value) {
+    return (
+      <div className="relative border border-border bg-muted">
+        <img src={value} alt="Preview" className="max-h-64 w-full object-contain" />
+        <div className="flex items-center justify-between border-t border-border bg-background px-3 py-2">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Image attached</span>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => inputRef.current?.click()}
+              className="text-[11px] uppercase tracking-[0.2em] text-accent hover:underline"
+            >
+              Replace
+            </button>
+            <button
+              type="button"
+              onClick={() => onChange("")}
+              className="text-[11px] uppercase tracking-[0.2em] text-destructive hover:underline"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+      onDragLeave={() => setDragging(false)}
+      onDrop={onDrop}
+      onClick={() => inputRef.current?.click()}
+      className={`flex cursor-pointer flex-col items-center justify-center gap-2 border-2 border-dashed p-10 text-center transition-colors ${
+        dragging ? "border-accent bg-accent/5" : "border-border bg-muted/30 hover:border-accent/60"
+      }`}
+    >
+      <div className="grid h-12 w-12 place-items-center border border-border bg-background">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 16V4M12 4l-4 4M12 4l4 4" />
+          <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+        </svg>
+      </div>
+      <div className="text-sm">
+        <span className="text-accent">Click to upload</span> or drag and drop
+      </div>
+      <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+        PNG · JPG · WEBP — up to 5MB
+      </div>
+      {error && <div className="mt-2 text-xs text-destructive">{error}</div>}
+      <input
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+      />
+    </div>
+  );
+}
