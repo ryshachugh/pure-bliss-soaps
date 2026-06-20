@@ -6,9 +6,9 @@ import process from "@/assets/process.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — Saanvi Naturals" },
+      { title: "Our Story — Ayura" },
       { name: "description", content: "How a kitchen experiment became a small soap workshop — our mission, our process, and the ingredients we believe in." },
-      { property: "og:title", content: "Our Story — Saanvi Naturals" },
+      { property: "og:title", content: "Our Story — Ayura" },
       { property: "og:description", content: "How a kitchen experiment became a small soap workshop." },
     ],
   }),
@@ -45,7 +45,7 @@ function About() {
           </p>
           <p>
             The first batch was uneven. The second was better. The fifth was given to friends
-            and family, who came back asking for more — and that was the beginning of Saanvi
+            and family, who came back asking for more — and that was the beginning of Ayura
             Naturals: a workshop kitchen built around the simple idea that soap can be both
             ordinary and exceptional.
           </p>

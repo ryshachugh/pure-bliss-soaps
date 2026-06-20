@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-forest text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-display text-2xl uppercase tracking-[0.18em]">Saanvi Naturals</div>
+          <div className="font-display text-2xl uppercase tracking-[0.18em]">Ayura</div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/75">
             Small-batch handmade soap, cold-processed and slow-cured in a workshop kitchen.
             Nature's care in every bar.
@@ -34,7 +34,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-cream/15">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-[11px] uppercase tracking-[0.2em] text-cream/60">
-          <span>© {new Date().getFullYear()} Saanvi Naturals</span>
+          <span>© {new Date().getFullYear()} Ayura</span>
           <span>Handmade · Cold-processed · Cruelty-free</span>
         </div>
       </div>

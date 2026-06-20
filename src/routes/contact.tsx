@@ -6,10 +6,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Saanvi Naturals" },
-      { name: "description", content: "Get in touch with the Saanvi Naturals workshop — questions, wholesale, custom orders, or just to say hello." },
-      { property: "og:title", content: "Contact — Saanvi Naturals" },
-      { property: "og:description", content: "Get in touch with the Saanvi Naturals workshop." },
+      { title: "Contact — Ayura" },
+      { name: "description", content: "Get in touch with the Ayura workshop — questions, wholesale, custom orders, or just to say hello." },
+      { property: "og:title", content: "Contact — Ayura" },
+      { property: "og:description", content: "Get in touch with the Ayura workshop." },
     ],
   }),
   component: Contact,

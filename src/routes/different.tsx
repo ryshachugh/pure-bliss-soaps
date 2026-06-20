@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/different")({
   head: () => ({
     meta: [
-      { title: "Why Our Soaps Are Different — Saanvi Naturals" },
+      { title: "Why Our Soaps Are Different — Ayura" },
       { name: "description", content: "Handmade, cold-processed natural soap vs mass-produced commercial soap — a side-by-side look at what's in the bar and how it's made." },
-      { property: "og:title", content: "Why Our Soaps Are Different — Saanvi Naturals" },
+      { property: "og:title", content: "Why Our Soaps Are Different — Ayura" },
       { property: "og:description", content: "Natural, handmade soap compared to commercial soap, side by side." },
     ],
   }),
@@ -50,7 +50,7 @@ function Different() {
             <thead className="bg-forest text-cream">
               <tr>
                 <th className="px-6 py-5 text-[11px] uppercase tracking-[0.22em]">&nbsp;</th>
-                <th className="px-6 py-5 text-[11px] uppercase tracking-[0.22em]">Saanvi Naturals</th>
+                <th className="px-6 py-5 text-[11px] uppercase tracking-[0.22em]">Ayura</th>
                 <th className="px-6 py-5 text-[11px] uppercase tracking-[0.22em] text-cream/70">Typical commercial bar</th>
               </tr>
             </thead>

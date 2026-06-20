@@ -16,7 +16,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-9 w-9 place-items-center bg-forest text-cream font-display text-lg">S</span>
-          <span className="font-display text-xl tracking-[0.18em] uppercase">Saanvi&nbsp;Naturals</span>
+          <span className="font-display text-xl tracking-[0.18em] uppercase">Ayura</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
