@@ -1,12 +1,15 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/ayura-logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-forest text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-display text-2xl uppercase tracking-[0.18em]">Ayura</div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/75">
+          <div className="bg-cream inline-block p-3">
+            <img src={logo} alt="Ayura" className="h-16 w-auto" />
+          </div>
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/75">
             Small-batch handmade soap, cold-processed and slow-cured in a workshop kitchen.
             Nature's care in every bar.
           </p>
