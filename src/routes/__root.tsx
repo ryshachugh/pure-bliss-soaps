@@ -75,10 +75,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Saanvi Naturals — Handmade Natural Soap" },
+      { title: "Ayura — Handmade Natural Soap" },
       { name: "description", content: "Small-batch handmade soap, cold-processed with botanical oils and butters. Nature's care in every bar." },
-      { name: "author", content: "Saanvi Naturals" },
-      { property: "og:title", content: "Saanvi Naturals — Handmade Natural Soap" },
+      { name: "author", content: "Ayura" },
+      { property: "og:title", content: "Ayura — Handmade Natural Soap" },
       { property: "og:description", content: "Small-batch handmade soap, cold-processed with botanical oils and butters." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/products/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.product;
-    const title = p ? `${p.name} — Saanvi Naturals` : "Soap — Saanvi Naturals";
+    const title = p ? `${p.name} — Ayura` : "Soap — Ayura";
     const desc = p?.shortDescription ?? "Handmade natural soap.";
     return {
       meta: [

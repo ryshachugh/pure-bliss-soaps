@@ -6,9 +6,9 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "The Soaps — Saanvi Naturals" },
+      { title: "The Soaps — Ayura" },
       { name: "description", content: "Our full collection of handmade cold-processed soaps — lavender, neem & tulsi, activated charcoal, and more." },
-      { property: "og:title", content: "The Soaps — Saanvi Naturals" },
+      { property: "og:title", content: "The Soaps — Ayura" },
       { property: "og:description", content: "Our full collection of handmade cold-processed soaps." },
     ],
   }),

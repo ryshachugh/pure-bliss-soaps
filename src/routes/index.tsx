@@ -7,9 +7,9 @@ import hero from "@/assets/hero-soaps.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Saanvi Naturals — Nature's Care in Every Bar" },
+      { title: "Ayura — Nature's Care in Every Bar" },
       { name: "description", content: "Handmade, cold-processed natural soap. Botanical oils, raw butters, and slow craft — no synthetic detergents, no shortcuts." },
-      { property: "og:title", content: "Saanvi Naturals — Nature's Care in Every Bar" },
+      { property: "og:title", content: "Ayura — Nature's Care in Every Bar" },
       { property: "og:description", content: "Handmade, cold-processed natural soap. Botanical oils and raw butters, slowly cured." },
     ],
   }),
@@ -65,7 +65,7 @@ function Home() {
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
         <div className="text-[11px] uppercase tracking-[0.28em] text-accent">A note from the workshop</div>
         <p className="mt-6 font-display text-2xl leading-snug md:text-3xl">
-          We started Saanvi Naturals because the bar in our shower had a fourteen-syllable
+          We started Ayura because the bar in our shower had a fourteen-syllable
           ingredient list and our grandmothers' recipes did not.
         </p>
       </section>
