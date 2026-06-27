@@ -23,11 +23,6 @@ const reasons = [
   { title: "Zero synthetic fragrance", body: "Only steam-distilled essential oils. What you smell is what's actually in the bar." },
 ];
 
-const testimonials = [
-  { name: "Anaya R.", role: "Mumbai", text: "I stopped buying drugstore soap a year ago. My skin stopped itching a week later. I don't go back." },
-  { name: "Sahil M.", role: "Bengaluru", text: "The neem & tulsi bar replaced three different acne products. It just works, quietly." },
-  { name: "Mira K.", role: "Delhi", text: "These feel like an heirloom, not a purchase. The lavender is my entire evening ritual now." },
-];
 
 function Home() {
   return (
