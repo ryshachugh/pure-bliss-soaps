@@ -123,24 +123,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="border-t border-border bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="text-[11px] uppercase tracking-[0.28em] text-cream/60">From the bathroom shelf</div>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl">What people are saying</h2>
-          <div className="mt-12 grid gap-px bg-cream/15 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="bg-forest p-8">
-                <div className="text-accent">★★★★★</div>
-                <blockquote className="mt-5 font-display text-lg leading-snug">"{t.text}"</blockquote>
-                <figcaption className="mt-6 text-xs uppercase tracking-[0.2em] text-cream/70">
-                  {t.name} · {t.role}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <SiteFooter />
     </div>
