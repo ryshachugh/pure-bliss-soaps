@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { products } from "@/lib/products";
 import hero from "@/assets/hero-soaps.jpg";
+import process from "@/assets/process.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -117,6 +118,39 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* Our Process */}
+      <section className="border-t border-border bg-muted/40">
+        <div className="mx-auto grid max-w-7xl items-stretch md:grid-cols-2">
+          <div className="relative min-h-[420px] md:min-h-full">
+            <img src={process} alt="Cold-processed soap being hand-cut in the Ayura workshop" loading="lazy" width={1400} height={1100} className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+          <div className="flex flex-col justify-center px-6 py-16 md:px-12 md:py-24">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-accent">The process</div>
+            <h2 className="mt-6 font-display text-3xl leading-[1.1] md:text-4xl">How a bar of Ayura is made.</h2>
+            <p className="mt-6 max-w-md text-muted-foreground">Six weeks from oil to bar. No shortcuts, no machines pretending to be hands.</p>
+
+            <ol className="mt-10 space-y-8">
+              {[
+                { t: "Blend the oils", b: "Cold-pressed coconut, olive, and castor oils are weighed and warmed to body temperature." },
+                { t: "Add the botanicals", b: "Raw butters, essential oils, clays, and herbs are folded in — small batches, always by hand." },
+                { t: "Pour and cut", b: "The batter is poured into wooden moulds, rested overnight, then hand-cut into 110g bars." },
+                { t: "Cure for six weeks", b: "Bars rest on cedar racks so water evaporates slowly — a harder, milder, longer-lasting soap." },
+              ].map((s, i) => (
+                <li key={s.t} className="grid grid-cols-[auto_1fr] gap-6">
+                  <div className="font-display text-3xl text-accent leading-none">0{i + 1}</div>
+                  <div>
+                    <h3 className="text-base font-semibold uppercase tracking-[0.12em]">{s.t}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.b}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
 
 
       <SiteFooter />
