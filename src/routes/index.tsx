@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { products } from "@/lib/products";
 import hero from "@/assets/hero-soaps.jpg";
+import process from "@/assets/process.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
