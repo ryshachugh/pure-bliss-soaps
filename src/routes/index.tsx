@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       { title: "Ayura — Nature's Care in Every Bar" },
       { name: "description", content: "Handmade, cold-processed natural soap. Botanical oils, raw butters, and slow craft — no synthetic detergents, no shortcuts." },
       { property: "og:title", content: "Ayura — Nature's Care in Every Bar" },
-      { property: "og:description", content: "Handmade, cold-processed natural soap. Botanical oils and raw butters, slowly cured." },
+      { property: "og:description", content: "Handmade, cold-processed natural soap. Botanical oils, raw butters, and slow craft — no synthetic detergents, no shortcuts." },
     ],
   }),
   component: Home,
