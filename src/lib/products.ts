@@ -1,112 +1,131 @@
-import lavender from "@/assets/soap-lavender.jpg";
-import neem from "@/assets/soap-neem.jpg";
-import charcoal from "@/assets/soap-charcoal.jpg";
+import petalEscape from "@/assets/petal_escape.jpeg";
+import pureNoir from "@/assets/pure_noir.jpeg";
+import secretSkies from "@/assets/secret_skies.jpeg";
+import secretGarden from "@/assets/secret_garden.jpeg";
+import bareTropics from "@/assets/bare_tropics.jpeg";
+import cozyCloud from "@/assets/cozy_cloud.jpeg";
 
 export type Product = {
   slug: string;
+  number: string;
   name: string;
   tagline: string;
+  scent: string;
+  type: string;
+  mood: string[];
   shortDescription: string;
   description: string;
   price: number;
   image: string;
+  scentProfile: string[];
+  ritual: string;
   ingredients: string[];
-  benefits: string[];
-  skinType: string;
-  usage: string;
-  reviews: { name: string; rating: number; text: string }[];
 };
+
+const ritual = "Lather between wet hands, massage gently onto damp skin and rinse thoroughly.";
 
 export const products: Product[] = [
   {
-    slug: "lavender",
-    name: "Lavender Soap",
-    tagline: "Calm in a bar.",
-    shortDescription: "Steam-distilled French lavender folded into a creamy shea base.",
+    slug: "petal-escape",
+    number: "01",
+    name: "Petal Escape",
+    tagline: "Where every wash feels like a little escape.",
+    scent: "Rose",
+    type: "Glycerin botanical soap",
+    mood: ["Soft", "Floral", "Romantic", "Refined"],
+    shortDescription: "A delicate rose-scented bar inspired by the timeless beauty of fresh petals.",
     description:
-      "A slow-cured bar built around steam-distilled French lavender essential oil and dried buds harvested at peak bloom. Designed to quiet the senses at the end of a long day.",
+      "A delicate rose-scented bar inspired by the timeless beauty of fresh petals. Handcrafted with a glycerin base and finished with a soft floral fragrance, Petal Escape turns an everyday cleanse into a beautifully simple ritual.",
     price: 12,
-    image: lavender,
-    ingredients: [
-      "Cold-pressed coconut oil",
-      "Raw shea butter",
-      "Organic olive oil",
-      "French lavender essential oil",
-      "Dried lavender buds",
-      "Kaolin clay",
-    ],
-    benefits: [
-      "Soothes stressed, reactive skin",
-      "Light floral aroma that lingers, never overpowers",
-      "Gentle daily cleanse, suitable for face and body",
-    ],
-    skinType: "Normal to sensitive",
-    usage: "Lather between palms or with a washcloth. Massage onto damp skin in slow circles. Rinse with cool water. Air-dry on a draining dish between uses to extend the bar's life.",
-    reviews: [
-      { name: "Anaya R.", rating: 5, text: "Smells like a garden after rain. My partner stole my bar within a week." },
-      { name: "Mira K.", rating: 5, text: "Finally a lavender soap that doesn't feel like cleaning supply. Calming, creamy, real." },
-      { name: "Devansh P.", rating: 4, text: "Great daily soap. Lasts ages if you keep it dry." },
-    ],
+    image: petalEscape,
+    scentProfile: ["Rose", "Soft Floral", "Fresh"],
+    ritual,
+    ingredients: ["Glycerin soap base", "Rose fragrance", "Soap-safe mica"],
   },
   {
-    slug: "neem-tulsi",
-    name: "Neem & Tulsi Soap",
-    tagline: "The old remedy, re-made.",
-    shortDescription: "Cold-pressed neem oil with hand-torn tulsi leaves for clarifying daily care.",
+    slug: "pure-noir",
+    number: "02",
+    name: "Pure Noir",
+    tagline: "The Essence of Simplicity.",
+    scent: "Earthy · Woody",
+    type: "Charcoal glycerin soap",
+    mood: ["Deep", "Earthy", "Minimal", "Refined"],
+    shortDescription: "A deep charcoal bar inspired by the raw beauty of nature.",
     description:
-      "A grandmother's recipe, reformulated. Cold-pressed neem oil and hand-torn tulsi (holy basil) leaves work as a clarifying daily wash for skin that needs balance, not stripping.",
-    price: 11,
-    image: neem,
-    ingredients: [
-      "Cold-pressed neem oil",
-      "Fresh tulsi (holy basil) leaves",
-      "Coconut oil",
-      "Organic olive oil",
-      "Castor oil",
-      "Green tea extract",
-    ],
-    benefits: [
-      "Clarifying for blemish-prone skin",
-      "Naturally antibacterial and antifungal",
-      "Balances oil without over-drying",
-    ],
-    skinType: "Oily, combination, blemish-prone",
-    usage: "Work into a soft lather on damp skin. Leave for 15 seconds before rinsing for a deeper clean. Use morning and night.",
-    reviews: [
-      { name: "Sahil M.", rating: 5, text: "Cleared up my back acne in three weeks. Smells earthy — I like it." },
-      { name: "Priya S.", rating: 5, text: "Reminds me of my grandmother's home remedies, but it actually feels nice on skin." },
-      { name: "Aarav T.", rating: 4, text: "Honest, hardworking soap. No frills, just results." },
-    ],
+      "A deep charcoal bar inspired by the raw beauty of nature. Handcrafted with a glycerin base and activated charcoal, Pure Noir brings a grounded, minimalist touch to your everyday cleansing ritual.",
+    price: 12,
+    image: pureNoir,
+    scentProfile: ["Earthy", "Woody", "Fresh"],
+    ritual,
+    ingredients: ["Glycerin soap base", "Activated charcoal", "Soap-safe fragrance"],
   },
   {
-    slug: "charcoal",
-    name: "Activated Charcoal Soap",
-    tagline: "Pull the day out.",
-    shortDescription: "Bamboo charcoal and sea salt for a deep, mineral-rich detox.",
+    slug: "secret-skies",
+    number: "03",
+    name: "Secret Skies",
+    tagline: "A quiet escape, under secret skies.",
+    scent: "Lavender",
+    type: "Glycerin botanical soap",
+    mood: ["Dreamy", "Serene", "Floral", "Refined"],
+    shortDescription: "A refined lavender bar inspired by the stillness of twilight.",
     description:
-      "Fine bamboo activated charcoal draws out grime and excess oil while raw sea salt resets the skin's mineral balance. A weekly deep-clean that doesn't leave you tight.",
-    price: 13,
-    image: charcoal,
-    ingredients: [
-      "Bamboo activated charcoal",
-      "Raw sea salt",
-      "Coconut oil",
-      "Cocoa butter",
-      "Tea tree essential oil",
-      "Castor oil",
-    ],
-    benefits: [
-      "Draws out impurities and excess oil",
-      "Polishes without micro-tearing",
-      "Leaves skin matte, not parched",
-    ],
-    skinType: "Oily to normal; weekly use for dry skin",
-    usage: "Wet face and bar. Lather in palms first, then massage onto skin for 30 seconds. Rinse thoroughly. Follow with a light moisturiser.",
-    reviews: [
-      { name: "Ishaan V.", rating: 5, text: "Pores look like they had a meeting and got their act together." },
-      { name: "Riya N.", rating: 4, text: "Strong cleanse — I save it for after gym days. Perfect for that." },
-      { name: "Kabir J.", rating: 5, text: "Black soap that doesn't make a mess. Beautiful bar, real work." },
-    ],
+      "A refined lavender bar inspired by the stillness of twilight. Handcrafted with a clear glycerin base and a soft floral fragrance, Secret Skies transforms an everyday cleanse into a quiet, beautifully considered ritual.",
+    price: 12,
+    image: secretSkies,
+    scentProfile: ["Lavender", "Soft Floral", "Herbal"],
+    ritual,
+    ingredients: ["Glycerin soap base", "Lavender fragrance", "Soap-safe mica"],
+  },
+  {
+    slug: "secret-garden",
+    number: "04",
+    name: "Secret Garden",
+    tagline: "Where softness blooms in secret.",
+    scent: "Jasmine",
+    type: "Glycerin botanical soap",
+    mood: ["Floral", "Soft", "Dreamy", "Refined"],
+    shortDescription: "A delicate jasmine-scented bar inspired by the quiet beauty of a hidden garden.",
+    description:
+      "A delicate jasmine-scented bar inspired by the quiet beauty of a hidden garden. Handcrafted with a glycerin base and finished with a soft floral fragrance, Secret Garden brings a gentle, indulgent touch to your everyday cleansing ritual.",
+    price: 12,
+    image: secretGarden,
+    scentProfile: ["Jasmine", "Soft Floral", "Sweet"],
+    ritual,
+    ingredients: ["Glycerin soap base", "Jasmine fragrance", "Soap-safe mica"],
+  },
+  {
+    slug: "bare-tropics",
+    number: "05",
+    name: "Bare Tropics",
+    tagline: "Mango never goes out of season.",
+    scent: "Mango",
+    type: "Glycerin botanical soap",
+    mood: ["Tropical", "Juicy", "Bright", "Fresh"],
+    shortDescription: "A vibrant mango-scented bar inspired by sun-drenched tropical days.",
+    description:
+      "A vibrant mango-scented bar inspired by sun-drenched tropical days. Handcrafted with a glycerin base and finished with a bright, fruity fragrance, Bare Tropics brings a fresh, carefree touch to your everyday cleansing ritual.",
+    price: 12,
+    image: bareTropics,
+    scentProfile: ["Mango", "Juicy", "Tropical"],
+    ritual,
+    ingredients: ["Glycerin soap base", "Mango fragrance", "Soap-safe mica"],
+  },
+  {
+    slug: "cozy-cloud",
+    number: "06",
+    name: "Cozy Cloud",
+    tagline: "Cloud nine, every time.",
+    scent: "Vanilla",
+    type: "Goat milk soap",
+    mood: ["Warm", "Sweet", "Creamy", "Comforting"],
+    shortDescription: "A warm vanilla-scented bar inspired by the soft comfort of sweet, familiar moments.",
+    description:
+      "A warm vanilla-scented bar inspired by the soft comfort of sweet, familiar moments. Handcrafted with a creamy goat milk soap base and finished with a rich vanilla fragrance, Cozy Cloud brings a warm, indulgent touch to your everyday cleansing ritual.",
+    price: 12,
+    image: cozyCloud,
+    scentProfile: ["Vanilla", "Creamy", "Sweet", "Warm"],
+    ritual,
+    ingredients: ["Goat milk soap base", "Vanilla fragrance", "Soap-safe mica"],
   },
 ];
 

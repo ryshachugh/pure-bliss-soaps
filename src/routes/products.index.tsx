@@ -7,9 +7,9 @@ export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "The Soaps — Ayura" },
-      { name: "description", content: "Our full collection of handmade cold-processed soaps — lavender, neem & tulsi, activated charcoal, and more." },
+      { name: "description", content: "Our full collection of handcrafted soaps — Petal Escape, Pure Noir, Secret Skies, Secret Garden, Bare Tropics and Cozy Cloud." },
       { property: "og:title", content: "The Soaps — Ayura" },
-      { property: "og:description", content: "Our full collection of handmade cold-processed soaps." },
+      { property: "og:description", content: "Our full collection of handcrafted soaps." },
     ],
   }),
   component: ProductsIndex,
@@ -25,8 +25,8 @@ function ProductsIndex() {
           <div className="text-[11px] uppercase tracking-[0.28em] text-accent">The collection</div>
           <h1 className="mt-6 font-display text-5xl leading-[1.05] md:text-6xl">All soaps</h1>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            Three core bars, each built around a single botanical idea.
-            Cold-processed, six-week cure, hand-cut to about 110g.
+            Six handcrafted bars, each built around a single scent and mood —
+            turning an everyday cleanse into a small ritual.
           </p>
         </div>
       </section>
@@ -44,22 +44,19 @@ function ProductsIndex() {
                   <img src={p.image} alt={p.name} loading="lazy" width={1100} height={1100} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-accent">{p.number} — {p.type}</div>
+                  <div className="mt-2 flex items-start justify-between gap-4">
                     <h2 className="font-display text-2xl">{p.name}</h2>
                     <div className="shrink-0 text-sm font-semibold">${p.price}</div>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{p.shortDescription}</p>
                   <div className="mt-5 border-t border-border pt-5">
-                    <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Main ingredients</div>
-                    <p className="mt-2 text-sm">{p.ingredients.slice(0, 3).join(" · ")}</p>
+                    <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Scent profile</div>
+                    <p className="mt-2 text-sm">{p.scentProfile.join(" · ")}</p>
                   </div>
                   <div className="mt-4">
-                    <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Benefits</div>
-                    <ul className="mt-2 space-y-1 text-sm">
-                      {p.benefits.slice(0, 2).map((b) => (
-                        <li key={b} className="flex gap-2"><span className="text-accent">—</span>{b}</li>
-                      ))}
-                    </ul>
+                    <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Mood</div>
+                    <p className="mt-2 text-sm">{p.mood.join(" • ")}</p>
                   </div>
                   <div className="mt-6 inline-block text-[11px] uppercase tracking-[0.22em] text-accent">
                     View bar →

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
 
 const faqs = [
   { q: "How long does a bar last?", a: "With a draining dish and dry-between-uses care, a 110g bar lasts about 4–6 weeks of daily use." },
-  { q: "Are your soaps safe for sensitive skin?", a: "Yes — the lavender bar in particular is built for reactive skin. If you have a known allergy to an ingredient, check the full list on each product page first." },
+  { q: "Are your soaps safe for sensitive skin?", a: "Our bars are gentle glycerin and goat milk formulas. If you have a known allergy to an ingredient, check the full list on each product page first." },
   { q: "Do you ship internationally?", a: "We currently ship across India, with select international shipping to the US, UK, and UAE. Email us for a quote." },
   { q: "Are the soaps vegan?", a: "Yes. All bars are 100% plant-based and cruelty-free. We use no tallow, honey, or animal-derived ingredients." },
   { q: "Do you offer wholesale or gifting?", a: "Yes — we work with small shops, hotels, and gift-curators. Drop us a line via the form below and tell us a bit about your project." },

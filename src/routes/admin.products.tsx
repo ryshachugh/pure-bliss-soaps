@@ -43,7 +43,8 @@ function AdminProducts() {
         {
           ...editing,
           description: editing.shortDescription,
-          ingredients: [], benefits: [], skinType: "All", usage: "", reviews: [],
+          number: String(prev.length + 1).padStart(2, "0"), scent: "", type: "", mood: [],
+          scentProfile: [], ritual: "", ingredients: [],
         } as Product,
       ];
     });

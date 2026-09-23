@@ -9,30 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as DifferentRouteImport } from './routes/different'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AdminRouteImport } from './routes/admin'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DifferentRouteImport } from './routes/different'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
-import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
-import { Route as AdminSubmissionsRouteImport } from './routes/admin.submissions'
 import { Route as AdminProductsRouteImport } from './routes/admin.products'
+import { Route as AdminSubmissionsRouteImport } from './routes/admin.submissions'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
-const DifferentRoute = DifferentRouteImport.update({
-  id: '/different',
-  path: '/different',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -40,14 +30,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsIndexRoute = ProductsIndexRouteImport.update({
-  id: '/products/',
-  path: '/products/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DifferentRoute = DifferentRouteImport.update({
+  id: '/different',
+  path: '/different',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -55,20 +50,25 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminRoute,
 } as any)
-const ProductsSlugRoute = ProductsSlugRouteImport.update({
-  id: '/products/$slug',
-  path: '/products/$slug',
-  getParentRoute: () => rootRouteImport,
+const AdminProductsRoute = AdminProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => AdminRoute,
 } as any)
 const AdminSubmissionsRoute = AdminSubmissionsRouteImport.update({
   id: '/submissions',
   path: '/submissions',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminProductsRoute = AdminProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => AdminRoute,
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -157,25 +157,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/different': {
-      id: '/different'
-      path: '/different'
-      fullPath: '/different'
-      preLoaderRoute: typeof DifferentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -185,18 +171,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products/': {
-      id: '/products/'
-      path: '/products'
-      fullPath: '/products/'
-      preLoaderRoute: typeof ProductsIndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/different': {
+      id: '/different'
+      path: '/different'
+      fullPath: '/different'
+      preLoaderRoute: typeof DifferentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
@@ -206,12 +199,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/products/$slug': {
-      id: '/products/$slug'
-      path: '/products/$slug'
-      fullPath: '/products/$slug'
-      preLoaderRoute: typeof ProductsSlugRouteImport
-      parentRoute: typeof rootRouteImport
+    '/admin/products': {
+      id: '/admin/products'
+      path: '/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/admin/submissions': {
       id: '/admin/submissions'
@@ -220,12 +213,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSubmissionsRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/products': {
-      id: '/admin/products'
+    '/products/': {
+      id: '/products/'
       path: '/products'
-      fullPath: '/admin/products'
-      preLoaderRoute: typeof AdminProductsRouteImport
-      parentRoute: typeof AdminRoute
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/products/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -256,3 +256,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

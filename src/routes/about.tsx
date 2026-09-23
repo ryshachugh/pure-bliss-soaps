@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import process from "@/assets/process.jpg";
+import { processSteps } from "@/lib/process";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -70,27 +71,25 @@ function About() {
       {/* Process */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          <img src={process} alt="Hand pouring soap into wooden molds" loading="lazy" width={1400} height={900} className="aspect-[4/3] w-full object-cover" />
+          <img src={process} alt="Hand pouring soap into moulds" loading="lazy" width={1400} height={900} className="aspect-[4/3] w-full object-cover" />
           <div>
-            <div className="text-[11px] uppercase tracking-[0.28em] text-accent">The process</div>
-            <h2 className="mt-3 font-display text-3xl md:text-4xl">Five steps, six weeks, one bar.</h2>
+            <div className="text-[11px] uppercase tracking-[0.28em] text-accent">How we make it</div>
+            <h2 className="mt-3 font-display text-3xl md:text-4xl">A ritual, reimagined.</h2>
             <ol className="mt-8 space-y-5">
-              {[
-                ["Source", "Cold-pressed oils, raw butters, dried herbs — selected and weighed by hand."],
-                ["Blend", "Oils and lye-water are combined at temperature until they reach light trace."],
-                ["Pour", "Essential oils and botanicals are folded in; the batch is poured into wooden molds."],
-                ["Cut", "After 24 hours we unmold and hand-cut each bar to size."],
-                ["Cure", "Bars cure on cedar racks for six weeks. The longer the cure, the milder the bar."],
-              ].map(([step, body], i) => (
-                <li key={step} className="grid grid-cols-[auto_1fr] gap-5">
+              {processSteps.map((s, i) => (
+                <li key={s.t} className="grid grid-cols-[auto_1fr] gap-5">
                   <span className="font-display text-2xl text-accent">0{i + 1}</span>
                   <div>
-                    <div className="text-sm font-semibold uppercase tracking-[0.12em]">{step}</div>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                    <div className="text-sm font-semibold uppercase tracking-[0.12em]">{s.t}</div>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.b}</p>
                   </div>
                 </li>
               ))}
             </ol>
+            <div className="mt-8 border-t border-border pt-6">
+              <div className="font-display text-xl">Handmade, from start to finish.</div>
+              <p className="mt-1 text-sm text-muted-foreground">Small batches. Thoughtful details. A little more care in every bar.</p>
+            </div>
           </div>
         </div>
       </section>

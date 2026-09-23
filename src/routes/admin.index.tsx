@@ -69,7 +69,7 @@ export default function AdminDashboard() {
           <h2 className="font-display text-xl">Top Products</h2>
           <ul className="mt-4 space-y-4">
             {products.map((p, i) => {
-              const pct = [78, 62, 45][i] ?? 30;
+              const pct = [78, 62, 45, 38, 30, 24][i] ?? 20;
               return (
                 <li key={p.slug}>
                   <div className="flex items-center justify-between text-sm">
