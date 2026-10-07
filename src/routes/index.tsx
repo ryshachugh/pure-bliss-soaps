@@ -37,7 +37,7 @@ function Home() {
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl items-stretch md:grid-cols-2">
           <div className="flex flex-col justify-center px-6 py-16 md:px-12 md:py-24">
-            <div className="text-[11px] uppercase tracking-[0.28em] text-accent">Ayura</div>
+            <div className="font-display text-2xl uppercase tracking-[0.3em] text-accent md:text-3xl">Ayura</div>
             <h1 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl">
               A ritual,<br />reimagined.
             </h1>
@@ -128,7 +128,6 @@ function Home() {
                   <h3 className="font-display text-xl">{p.name}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{p.tagline}</p>
                 </div>
-                <div className="shrink-0 text-sm font-semibold">${p.price}</div>
               </div>
             </Link>
           ))}

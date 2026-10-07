@@ -11,11 +11,10 @@ type Draft = {
   name: string;
   tagline: string;
   shortDescription: string;
-  price: number;
   image: string;
 };
 
-const empty: Draft = { slug: "", name: "", tagline: "", shortDescription: "", price: 0, image: "" };
+const empty: Draft = { slug: "", name: "", tagline: "", shortDescription: "", image: "" };
 
 function AdminProducts() {
   const [items, setItems] = useState<Product[]>(seed);
@@ -26,7 +25,7 @@ function AdminProducts() {
   const openEdit = (p: Product) => {
     setEditing({
       slug: p.slug, name: p.name, tagline: p.tagline,
-      shortDescription: p.shortDescription, price: p.price, image: p.image,
+      shortDescription: p.shortDescription, image: p.image,
     });
     setShowForm(true);
   };
@@ -82,10 +81,7 @@ function AdminProducts() {
               )}
             </div>
             <div className="p-5">
-              <div className="flex items-baseline justify-between">
-                <h3 className="font-display text-lg">{p.name}</h3>
-                <span className="text-sm">₹ {p.price * 20}</span>
-              </div>
+              <h3 className="font-display text-lg">{p.name}</h3>
               <p className="mt-1 text-xs uppercase tracking-[0.18em] text-accent">{p.tagline}</p>
               <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{p.shortDescription}</p>
               <div className="mt-5 flex gap-2">
@@ -125,9 +121,6 @@ function AdminProducts() {
               </Field>
               <Field label="Tagline">
                 <input value={editing.tagline} onChange={(e) => setEditing({ ...editing, tagline: e.target.value })} className="input" />
-              </Field>
-              <Field label="Price (USD)">
-                <input type="number" value={editing.price} onChange={(e) => setEditing({ ...editing, price: Number(e.target.value) })} className="input" />
               </Field>
               <Field label="Product Image" full>
                 <ImageDropzone

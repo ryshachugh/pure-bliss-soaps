@@ -3,7 +3,7 @@ import logo from "@/assets/ayura-logo.png";
 
 export const Route = createFileRoute("/admin")({
   component: AdminLayout,
-  head: () => ({ meta: [{ title: "Admin · Ayura" }] }),
+  head: () => ({ meta: [{ title: "Admin · Ayura" }, { name: "robots", content: "noindex, nofollow" }] }),
 });
 
 const links = [
@@ -17,7 +17,7 @@ function AdminLayout() {
     <div className="flex min-h-screen bg-muted/40">
       <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-background md:flex">
         <Link to="/" className="flex items-center justify-center border-b border-border px-6 py-6">
-          <img src={logo} alt="Ayura" className="h-12 w-auto" />
+          <img src={logo} alt="Ayura" className="h-10 w-auto" />
         </Link>
         <nav className="flex flex-col p-4">
           {links.map((l) => (

@@ -79,10 +79,7 @@ function ProductDetail() {
             <div className="mt-4 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{p.mood.join(" • ")}</div>
             <p className="mt-6 leading-relaxed text-muted-foreground">{p.description}</p>
 
-            <div className="mt-8 flex items-end gap-6">
-              <div className="font-display text-4xl">${p.price}</div>
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">110g bar</div>
-            </div>
+            <div className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">110g bar</div>
             <button className="mt-6 w-full bg-forest px-7 py-5 text-[11px] uppercase tracking-[0.22em] text-cream hover:bg-accent sm:w-auto">
               Add to cart
             </button>

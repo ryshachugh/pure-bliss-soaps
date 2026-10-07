@@ -47,7 +47,6 @@ function ProductsIndex() {
                   <div className="text-[10px] uppercase tracking-[0.22em] text-accent">{p.number} — {p.type}</div>
                   <div className="mt-2 flex items-start justify-between gap-4">
                     <h2 className="font-display text-2xl">{p.name}</h2>
-                    <div className="shrink-0 text-sm font-semibold">${p.price}</div>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{p.shortDescription}</p>
                   <div className="mt-5 border-t border-border pt-5">

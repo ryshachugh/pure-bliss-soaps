@@ -15,7 +15,6 @@ export type Product = {
   mood: string[];
   shortDescription: string;
   description: string;
-  price: number;
   image: string;
   scentProfile: string[];
   ritual: string;
@@ -36,7 +35,6 @@ export const products: Product[] = [
     shortDescription: "A delicate rose-scented bar inspired by the timeless beauty of fresh petals.",
     description:
       "A delicate rose-scented bar inspired by the timeless beauty of fresh petals. Handcrafted with a glycerin base and finished with a soft floral fragrance, Petal Escape turns an everyday cleanse into a beautifully simple ritual.",
-    price: 12,
     image: petalEscape,
     scentProfile: ["Rose", "Soft Floral", "Fresh"],
     ritual,
@@ -53,7 +51,6 @@ export const products: Product[] = [
     shortDescription: "A deep charcoal bar inspired by the raw beauty of nature.",
     description:
       "A deep charcoal bar inspired by the raw beauty of nature. Handcrafted with a glycerin base and activated charcoal, Pure Noir brings a grounded, minimalist touch to your everyday cleansing ritual.",
-    price: 12,
     image: pureNoir,
     scentProfile: ["Earthy", "Woody", "Fresh"],
     ritual,
@@ -70,7 +67,6 @@ export const products: Product[] = [
     shortDescription: "A refined lavender bar inspired by the stillness of twilight.",
     description:
       "A refined lavender bar inspired by the stillness of twilight. Handcrafted with a clear glycerin base and a soft floral fragrance, Secret Skies transforms an everyday cleanse into a quiet, beautifully considered ritual.",
-    price: 12,
     image: secretSkies,
     scentProfile: ["Lavender", "Soft Floral", "Herbal"],
     ritual,
@@ -87,7 +83,6 @@ export const products: Product[] = [
     shortDescription: "A delicate jasmine-scented bar inspired by the quiet beauty of a hidden garden.",
     description:
       "A delicate jasmine-scented bar inspired by the quiet beauty of a hidden garden. Handcrafted with a glycerin base and finished with a soft floral fragrance, Secret Garden brings a gentle, indulgent touch to your everyday cleansing ritual.",
-    price: 12,
     image: secretGarden,
     scentProfile: ["Jasmine", "Soft Floral", "Sweet"],
     ritual,
@@ -104,7 +99,6 @@ export const products: Product[] = [
     shortDescription: "A vibrant mango-scented bar inspired by sun-drenched tropical days.",
     description:
       "A vibrant mango-scented bar inspired by sun-drenched tropical days. Handcrafted with a glycerin base and finished with a bright, fruity fragrance, Bare Tropics brings a fresh, carefree touch to your everyday cleansing ritual.",
-    price: 12,
     image: bareTropics,
     scentProfile: ["Mango", "Juicy", "Tropical"],
     ritual,
@@ -121,7 +115,6 @@ export const products: Product[] = [
     shortDescription: "A warm vanilla-scented bar inspired by the soft comfort of sweet, familiar moments.",
     description:
       "A warm vanilla-scented bar inspired by the soft comfort of sweet, familiar moments. Handcrafted with a creamy goat milk soap base and finished with a rich vanilla fragrance, Cozy Cloud brings a warm, indulgent touch to your everyday cleansing ritual.",
-    price: 12,
     image: cozyCloud,
     scentProfile: ["Vanilla", "Creamy", "Sweet", "Warm"],
     ritual,

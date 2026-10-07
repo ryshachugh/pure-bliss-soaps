@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="bg-cream inline-block p-3">
-            <img src={logo} alt="Ayura" className="h-16 w-auto" />
+            <img src={logo} alt="Ayura" className="h-14 w-auto" />
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/75">
             Small-batch handmade soap, cold-processed and slow-cured in a workshop kitchen.

@@ -4,9 +4,9 @@ import logo from "@/assets/ayura-logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
+  { to: "/products", label: "Soaps" },
   { to: "/about", label: "Our Story" },
   { to: "/different", label: "Why Different" },
-  { to: "/products", label: "Soaps" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -16,7 +16,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Ayura" className="h-12 w-auto md:h-14" />
+          <img src={logo} alt="Ayura" className="h-10 w-auto md:h-12" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
@@ -30,12 +30,6 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
-          <Link
-            to="/admin"
-            className="border border-foreground/20 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-foreground/80 transition-colors hover:border-accent hover:text-accent"
-          >
-            Admin
-          </Link>
         </nav>
         <button
           onClick={() => setOpen((v) => !v)}
@@ -60,13 +54,6 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <Link
-              to="/admin"
-              onClick={() => setOpen(false)}
-              className="py-3 text-[13px] uppercase tracking-[0.18em] text-accent"
-            >
-              Admin
-            </Link>
           </div>
         </nav>
       )}
