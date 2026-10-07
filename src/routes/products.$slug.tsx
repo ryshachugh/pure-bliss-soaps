@@ -80,9 +80,6 @@ function ProductDetail() {
             <p className="mt-6 leading-relaxed text-muted-foreground">{p.description}</p>
 
             <div className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">110g bar</div>
-            <button className="mt-6 w-full bg-forest px-7 py-5 text-[11px] uppercase tracking-[0.22em] text-cream hover:bg-accent sm:w-auto">
-              Add to cart
-            </button>
 
             <div className="mt-10 grid gap-6 border-t border-border pt-8 sm:grid-cols-2">
               <div>
